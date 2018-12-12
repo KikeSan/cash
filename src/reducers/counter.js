@@ -1,6 +1,7 @@
 import { INCREMENT, DECREMENT } from '../actions'
+const initialState = 10
 
-const number = (state = 0, action) => {
+const number = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return state + 1
