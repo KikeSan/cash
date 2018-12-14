@@ -1,0 +1,14 @@
+header{
+  color: #5040b2;
+  border-bottom: 1px solid #ddd;
+}
+.navbar-collapse{
+  position: absolute;
+  right: 10px;
+  .navbar-text{
+    margin: 0 15px;
+  }
+  .userName{
+    margin: 0 5px;
+  }
+}
