@@ -1,19 +1,6 @@
-export const INCREMENT = 'INCREMENT'
-export const DECREMENT = 'DECREMENT'
-export const CREDIT = 'CREDIT'
+import { CHANGE_MENU } from './action-types'
 
-export const increment = () => {
-  return {
-    type: INCREMENT,
-  }
-}
-
-export const decrement = () => {
-  return {
-    type: DECREMENT,
-  }
-}
-
-export const initCredit = () => ({
-  type: CREDIT,
+export const changeMenu = idMenu => ({
+	type: CHANGE_MENU,
+	payload: idMenu
 })

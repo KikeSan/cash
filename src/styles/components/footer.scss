@@ -1,13 +1,13 @@
-footer{
-  position: absolute;
-  bottom: 0;
-  height: 50px;
-  color: grey;
-  background: #fff;
-  border-top: 1px solid #e6e6e6;
-  line-height: 50px;
-  font-size: 12px;
-  .credit-text{
-    margin: 0 5px;
-  }
+footer {
+	position: fixed;
+	bottom: 0;
+	height: 50px;
+	color: grey;
+	background: #fff;
+	border-top: 1px solid #e6e6e6;
+	line-height: 50px;
+	font-size: 12px;
+	.credit-text {
+		margin: 0 5px;
+	}
 }

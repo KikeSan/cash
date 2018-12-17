@@ -1,0 +1,9 @@
+body {
+	font-family: $roboto;
+}
+#root,
+.wrapper,
+.content {
+	height: 100vh;
+	display: block;
+}
