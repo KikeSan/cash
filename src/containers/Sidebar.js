@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { changeMenu } from '../actions/index'
 
 const mapStateToProps = state => {
-	console.log('Sidebar:' + state)
+	console.log('Sidebar:', state.sidebar)
 
 	return {
-		menu: state.menu,
-		activo: state.activo
+		menu: state.sidebar.menu,
+		activo: state.sidebar.activo
 	}
 }
 const mapDispatchToProps = dispatch => {
@@ -19,6 +19,12 @@ const mapDispatchToProps = dispatch => {
 class ConnectedSidebar extends Component {
 	constructor() {
 		super()
+		this.handleChangeMenu = this.handleChangeMenu.bind(this)
+	}
+	handleChangeMenu(e) {
+		console.log(e.currentTarget.attributes['id-menu'].value)
+		const idMenu = e.currentTarget.attributes['id-menu'].value
+		this.props.changeMenu(idMenu)
 	}
 	render() {
 		return (
@@ -35,18 +41,20 @@ class ConnectedSidebar extends Component {
 						</a>
 					</li> */}
 					{this.props.menu.map(item => {
+						console.log(item.id, ' === ', this.props.activo)
+
 						if (item.id === this.props.activo) {
 							return (
-								<li className="active">
-									<a>
+								<li className="active" key={item.id}>
+									<a onClick={this.handleChangeMenu} id-menu={item.id}>
 										<FontAwesomeIcon icon={item.icon} size="sm" /> <span>{item.name}</span>
 									</a>
 								</li>
 							)
 						} else {
 							return (
-								<li>
-									<a>
+								<li key={item.id}>
+									<a onClick={this.handleChangeMenu} id-menu={item.id}>
 										<FontAwesomeIcon icon={item.icon} size="sm" /> <span>{item.name}</span>
 									</a>
 								</li>

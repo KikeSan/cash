@@ -25,5 +25,15 @@
 				}
 			}
 		}
+		li.active {
+			a {
+				background: #f1f1f1;
+				border-left: 3px solid blue;
+				svg,
+				span {
+					color: blue;
+				}
+			}
+		}
 	}
 }

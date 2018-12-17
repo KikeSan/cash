@@ -6,8 +6,8 @@ import sidebar from './sidebar'
 
 const reducers = combineReducers({
 	sidebar,
-	credit,
-	categorias
+	categorias,
+	credit
 })
 
 export default reducers
