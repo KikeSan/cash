@@ -1,20 +1,18 @@
 .btn {
-  background-color: $grey1;
-  border: none;
-  border-radius: 3px;
-  color: $grey2;
-  height: 40px;
-  line-height: 36px;
-  outline: 0;
-  padding: 0 15px;
+	background-color: $purple;
+	border-radius: 3px;
+	color: #fff !important;
+	padding: 6px;
+	font-size: 13px;
+	text-transform: capitalize;
 }
 
 .btn-primary {
-  background-color: $blue;
-  color: $white;
+	background-color: $blue;
+	color: $white;
 }
 
 .btn-error {
-  background-color: $red;
-  color: $white;
+	background-color: $red;
+	color: $white;
 }

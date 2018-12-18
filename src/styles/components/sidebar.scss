@@ -3,6 +3,8 @@
 	display: inline-block;
 	border-right: 1px solid #e6e6e6;
 	height: 100%;
+	vertical-align: top;
+	background: #fff;
 	ul {
 		list-style: none;
 		padding: 0;
@@ -15,23 +17,24 @@
 			border-left: 3px solid #fff;
 			span {
 				margin-left: 3px;
+				color: $dark;
 			}
 			&:hover {
 				background: #f1f1f1;
-				border-left: 3px solid blue;
+				border-left: 3px solid $purple;
 				svg,
 				span {
-					color: blue;
+					color: $purple;
 				}
 			}
 		}
 		li.active {
 			a {
 				background: #f1f1f1;
-				border-left: 3px solid blue;
+				border-left: 3px solid $purple;
 				svg,
 				span {
-					color: blue;
+					color: $purple;
 				}
 			}
 		}
