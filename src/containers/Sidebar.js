@@ -23,7 +23,7 @@ class ConnectedSidebar extends Component {
 	}
 	handleChangeMenu(e) {
 		console.log(e.currentTarget.attributes['id-menu'].value)
-		const idMenu = e.currentTarget.attributes['id-menu'].value
+		const idMenu = Number(e.currentTarget.attributes['id-menu'].value)
 		this.props.changeMenu(idMenu)
 	}
 	render() {

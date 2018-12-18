@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Header from './containers/Header'
 import Sidebar from './containers/Sidebar'
 import Body from './containers/Body'
+import Footer from "./containers/Footer"
+import Categories from './containers/Categories'
+import {connect} from 'react-redux'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTasks, faChevronLeft, faChevronRight, faHeart, faUser, faBook, faListAlt } from '@fortawesome/free-solid-svg-icons'
@@ -11,27 +14,33 @@ import './styles/index.scss'
 
 library.add(faTasks, faChevronLeft, faChevronRight, fab, faHeart, faUser, faBook, faListAlt)
 
+const mapStateToProps = state => {
+	console.log('MAPSTATE: ',state.sidebar.activo);
+	
+	return{
+		activo: state.sidebar.activo
+	}
+}
+
 class App extends Component {
 	render() {
+		const verify = this.props.activo
 		return (
 			<div className="wrapper">
 				<Header />
 				<div className="content">
 					<Sidebar />
-					<Body />
+					{verify===0 ?(
+					<Body />):(
+					<Categories/>)}
+					
 				</div>
-				<footer className="container-fluid credits text-center">
-					<FontAwesomeIcon icon="chevron-left" />
-					<FontAwesomeIcon icon="chevron-right" />
-					<span className="credit-text">with</span>
-					<FontAwesomeIcon icon="heart" />
-					<span className="credit-text">and</span>
-					<FontAwesomeIcon icon={['fab', 'react']} size="lg" />
-					<span className="credit-text">by Kike</span>
-				</footer>
+				<Footer />
 			</div>
 		)
 	}
 }
 
-export default App
+const AppConnect = connect(mapStateToProps,null)(App)
+
+export default AppConnect
