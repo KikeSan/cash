@@ -3,11 +3,12 @@ import counter from './counter'
 import credit from './credits'
 import categorias from './categorias'
 import sidebar from './sidebar'
+import cuentas from './cuentas'
 
 const reducers = combineReducers({
 	sidebar,
 	categorias,
-	credit
+	cuentas
 })
 
 export default reducers

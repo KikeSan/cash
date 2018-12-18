@@ -1,4 +1,4 @@
-import { CHANGE_MENU, ADD_CATEGORY } from './action-types'
+import { CHANGE_MENU, ADD_CATEGORY, ADD_CUENTA } from './action-types'
 
 export const changeMenu = idMenu => ({
 	type: CHANGE_MENU,
@@ -8,4 +8,9 @@ export const changeMenu = idMenu => ({
 export const addCategory = categ => ({
 	type: ADD_CATEGORY,
 	payload: categ
+})
+
+export const addCuenta = cta => ({
+	type: ADD_CUENTA,
+	payload: cta
 })

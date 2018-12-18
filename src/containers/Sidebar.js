@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { changeMenu } from '../actions/index'
 
 const mapStateToProps = state => {
-	console.log('Sidebar:', state.sidebar)
-
 	return {
 		menu: state.sidebar.menu,
 		activo: state.sidebar.activo
@@ -41,8 +39,6 @@ class ConnectedSidebar extends Component {
 						</a>
 					</li> */}
 					{this.props.menu.map(item => {
-						console.log(item.id, ' === ', this.props.activo)
-
 						if (item.id === this.props.activo) {
 							return (
 								<li className="active" key={item.id}>

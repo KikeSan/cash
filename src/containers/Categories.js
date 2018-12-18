@@ -51,7 +51,7 @@ class Categories extends Component {
 	render() {
 		return (
 			<div className="main-Categ">
-				<div className="header">
+				<div className="headerSeccion">
 					<span>Categorías</span>
 					<a className="btn" onClick={this.handleToogleModal}>
 						<FontAwesomeIcon icon="plus-circle" size="sm" />

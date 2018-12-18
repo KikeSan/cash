@@ -2,3 +2,5 @@ export const ADD_CATEGORY = 'ADD_CATEGORY'
 export const EDIT_CATEGORY = 'EDIT_CATEGORY'
 export const REMOVE_CATEGORY = 'REMOVE_CATEGORY'
 export const CHANGE_MENU = 'CHANGE_MENU'
+
+export const ADD_CUENTA = 'ADD_CUENTA'

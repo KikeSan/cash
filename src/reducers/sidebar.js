@@ -25,8 +25,6 @@ const sidebarReducer = (state = initialState, action) => {
 			}
 
 		default:
-			console.log('Reducer default: ', state.menu)
-
 			return state
 	}
 }

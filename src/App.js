@@ -15,8 +15,6 @@ import './styles/index.scss'
 library.add(faTasks, faChevronLeft, faChevronRight, fab, faHeart, faUser, faBook, faListAlt, faPlusCircle)
 
 const mapStateToProps = state => {
-	console.log('MAPSTATE: ', state.sidebar.activo)
-
 	return {
 		activo: state.sidebar.activo
 	}
