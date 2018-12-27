@@ -1,13 +1,27 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+const mapStateToProps = state => {
+	console.log('cuentas --- ',state.cuentas.cuentas);
+	
+	return{
+		cuentas: state.cuentas.cuentas
+	}
+}
+
 class Body extends Component {
+	constructor(){
+		super()
+		this.state = {
+			activo:'001'
+		}
+	}
 	render() {
 		return (
 			<div className="main-body">
 				<div className="container-fluid">
-					<div className="row">
-						<div className="col-2">
+						<div className="wrapperCuentas">
 							<div className="headerSeccion">
 								<span>Cuentas</span>
 								<a className="btn" onClick={this.handleToogleModal}>
@@ -15,14 +29,26 @@ class Body extends Component {
 									<span>Nuevo</span>
 								</a>
 							</div>
-							<div className="cuentas-list" />
+							<div className="cuentas-list">
+								{this.props.cuentas.map(cta=>{
+									return(
+										<a className={this.state===cta.id?"cuentas-item item-activo":"cuentas-item"} key={cta.id}>
+											<h4 className="cuentas-item__nombre">{cta.nombre}</h4>
+											<span className="cuentas-item__badge badge">{cta.tipo}</span>
+											<span className="cuentas-item__monto">S/{cta.monto}</span>
+											<span className="cuentas-item__fecha">{cta.fecha}</span>
+										</a>
+									)
+								})}
+							</div>
 						</div>
-						<div className="col-10">Body</div>
+						<div className="wrapperDetalle">Body</div>
 					</div>
-				</div>
 			</div>
 		)
 	}
 }
 
-export default Body
+const bodyConnect = connect(mapStateToProps)(Body)
+
+export default bodyConnect

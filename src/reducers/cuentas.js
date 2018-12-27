@@ -10,6 +10,7 @@ const initialState = {
 			monto: 211,
 			apertura: 0,
 			alertaMonto: 200,
+			fecha:'16/12/2018',
 			transacciones: [
 				{
 					id: 1,
@@ -47,6 +48,7 @@ const initialState = {
 			monto: 880.25,
 			apertura: 500,
 			alertaMonto: 300,
+			fecha:'01/12/2018',
 			transacciones: [
 				{
 					id: 1,
@@ -72,6 +74,7 @@ const initialState = {
 			monto: 550,
 			apertura: 500,
 			alertaMonto: 120,
+			fecha:'10/12/2018',
 			transacciones: [
 				{
 					id: 1,

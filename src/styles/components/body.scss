@@ -6,9 +6,48 @@
 	padding-bottom: 50px;
 }
 .main-body {
-	.col-2 {
+	.container-fluid{
+		padding: 0;
+	}
+	.wrapperCuentas {
 		padding: 0;
 		border-right: 1px solid $grey;
+		width: 280px;
+		display: inline-block;
+		.cuentas-list{
+			.cuentas-item{
+				cursor:pointer;
+				border-top: 1px solid #f3f4f7;
+				width: 100%;
+				display: block;
+				padding: 10px 20px;
+			}
+			.cuentas-item__nombre{
+				color: #555;
+				margin: 0;
+				font-size: 13px;
+			}
+			.cuentas-item__badge{
+				background: $purple;
+				font-size: 9px;
+				color: #fff;
+				text-transform: uppercase;
+			}
+			.cuentas-item__monto{
+				padding-left: 8px;
+				font-size: 16px;
+			}
+			.cuentas-item__fecha{
+				float: right;
+				color: #a2a2a2;
+				font-size: 11px;
+			}
+		}
+	}
+	.wrapperDetalle{
+		display: inline-block;
+		width: calc(100% - 280px);
+		vertical-align: top;
 	}
 }
 
