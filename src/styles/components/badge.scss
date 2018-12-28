@@ -1,0 +1,28 @@
+.badge {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 9px;
+	border-radius: 3px;
+	line-height: 0.9;
+}
+.badge--red {
+	background: $red;
+}
+.badge--purple {
+	background: $purple;
+}
+
+.bullet {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin: 2px 5px 0 0;
+	border-radius: 50%;
+}
+.bullet--red {
+	background: $red;
+}
+.bullet--green {
+	background: $green;
+}

@@ -6,7 +6,7 @@
 	height: 100%;
 }
 .main-body {
-	.container-fluid{
+	> .container-fluid {
 		padding: 0;
 		height: 100%;
 	}
@@ -16,60 +16,114 @@
 		width: 280px;
 		display: inline-block;
 		height: 100%;
-		.cuentas-list{
-			.cuentas-item{
-				cursor:pointer;
+		.cuentas-list {
+			.cuentas-item {
+				cursor: pointer;
 				border-top: 1px solid #f3f4f7;
 				width: 100%;
 				display: block;
 				padding: 10px 20px;
 				border-left: 5px solid transparent;
 				@include transition(all 0.4s 0s ease-out);
-				&:hover:not(.item-activo){
+				&:hover:not(.item-activo) {
 					background: #f3f4f7;
 					border-left: 5px solid #f3f4f7;
 				}
 			}
-			.item-activo{
+			.item-activo {
 				background: #f3f4f7;
 				border-left: 5px solid #5040b2;
 			}
-			.cuentas-item__nombre{
+			.cuentas-item__nombre {
 				color: #555;
 				margin: 0;
 				font-size: 13px;
 			}
-			.cuentas-item__badge{
+			.cuentas-item__badge {
 				font-size: 9px;
 				color: #fff;
 				text-transform: uppercase;
 			}
-			.cuentas-item__badge--efectivo{
+			.cuentas-item__badge--efectivo {
 				background: $purple;
 			}
-			.cuentas-item__badge--banco{
+			.cuentas-item__badge--banco {
 				background: $lightblue;
 			}
-			.cuentas-item__monto{
+			.cuentas-item__monto {
 				padding-left: 8px;
 				font-size: 16px;
 			}
-			.cuentas-item__fecha{
+			.cuentas-item__fecha {
 				float: right;
 				color: #a2a2a2;
 				font-size: 11px;
 			}
 		}
 	}
-	.wrapperDetalle{
+	.wrapperDetalle {
 		display: inline-block;
 		width: calc(100% - 280px);
 		vertical-align: top;
-		.panel-header{
+		.panel-header {
 			padding: 15px 20px;
-			h3{
+			h3 {
 				font-size: 18px;
 				color: $purple;
+			}
+		}
+
+		.panel-body {
+			.tab-list {
+				border-bottom: 1px solid $grey;
+				.tab-list-item {
+					font-size: 14px;
+					text-align: center;
+					line-height: 24px;
+					padding: 12px 24px;
+					cursor: pointer;
+					position: relative;
+					text-transform: uppercase;
+					font-weight: 500;
+					color: $dark;
+					border-width: 0px 0px 1px 0px;
+				}
+				.tab-list-active {
+					border-bottom: 2px solid $purple;
+					color: $lightblue;
+				}
+			}
+			.tx-title {
+				font-size: 14px;
+				color: $texto;
+				font-weight: 300;
+				margin-bottom: 0px;
+			}
+			.tx-description {
+				font-size: 1rem;
+			}
+			.tx-description--purple {
+				color: $purple;
+			}
+			.tx-description--red {
+				color: $red;
+			}
+			.tx-description--green {
+				color: $green;
+			}
+
+			.table {
+				.table-head {
+					text-transform: uppercase;
+					font-size: 12px;
+					font-weight: 400;
+					padding: 4px 10px;
+				}
+				.table-cell {
+					font-size: 12.5px;
+					font-weight: 400;
+					padding: 6px 10px;
+				}
 			}
 		}
 	}
