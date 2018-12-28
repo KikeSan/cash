@@ -72,7 +72,16 @@ class Body extends Component {
 													<div className="row">
 														<div className="col">
 															<p className="tx-title">Monto disponible</p>
-															<p className="tx-description tx-description--purple">S/{data.monto}</p>
+															<p className="tx-description tx-description--purple">
+																S/
+																{data.transacciones.reduce((acc, currValue) => {
+																	if (currValue.tipoTx === "ingreso") {
+																		return acc + currValue.importe;
+																	} else {
+																		return acc - currValue.importe;
+																	}
+																}, 0)}
+															</p>
 														</div>
 														<div className="col">
 															<p className="tx-title">Monto apertura</p>
@@ -80,24 +89,16 @@ class Body extends Component {
 														</div>
 														<div className="col">
 															<p className="tx-title">Total gastos</p>
-															<p className="tx-description tx-description--red">
-																{data.transacciones.reduce((acc, currValue) => {
-																	console.log("REDUCE:", acc);
-
-																	if (currValue.tipoTx === "egreso") {
-																		return currValue.importe;
-																	}
-																})}
-															</p>
+															<p className="tx-description tx-description--red">S/{data.transacciones.filter(item => (item.tipoTx === "egreso" ? item.importe : null)).reduce((acc, currValue) => acc + currValue.importe, 0)}</p>
 														</div>
 														<div className="col">
 															<p className="tx-title">Total ingresos</p>
-															<p className="tx-description tx-description--green">hola</p>
+															<p className="tx-description tx-description--green">S/{data.transacciones.filter(item => (item.tipoTx === "ingreso" ? item.importe : null)).reduce((acc, currValue) => acc + currValue.importe, 0)}</p>
 														</div>
 													</div>
 													<div className="row">
 														<div className="col">
-															<table className="table table-striped table-bordered table-sm">
+															<table className="table table-striped table-bordered table-sm table-hover">
 																<thead>
 																	<tr>
 																		<th className="table-head">Nº</th>
