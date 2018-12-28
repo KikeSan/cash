@@ -53,7 +53,7 @@ class Categories extends Component {
 			<div className="main-Categ">
 				<div className="headerSeccion">
 					<span>Categorías</span>
-					<a className="btn" onClick={this.handleToogleModal}>
+					<a className="btn btn-primary" onClick={this.handleToogleModal}>
 						<FontAwesomeIcon icon="plus-circle" size="sm" />
 						<span>Nuevo</span>
 					</a>

@@ -12,16 +12,20 @@
 			font-size: 14px;
 			width: 100%;
 			display: block;
-			padding: 10px 12px;
+			padding: 13px 12px;
 			cursor: pointer;
-			border-left: 3px solid #fff;
+			border-left: 5px solid #fff;
+			@include transition(all 0.4s 0s ease-out);
 			span {
-				margin-left: 3px;
+				margin-left: 5px;
 				color: $dark;
+			}
+			svg{
+				@include transition(all 0.4s 0s ease-out);
 			}
 			&:hover {
 				background: #f1f1f1;
-				border-left: 3px solid $purple;
+				border-left: 5px solid #f1f1f1;
 				svg,
 				span {
 					color: $purple;
@@ -31,7 +35,7 @@
 		li.active {
 			a {
 				background: #f1f1f1;
-				border-left: 3px solid $purple;
+				border-left: 5px solid $purple;
 				svg,
 				span {
 					color: $purple;

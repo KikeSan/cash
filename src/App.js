@@ -7,12 +7,12 @@ import Categories from './containers/Categories'
 import { connect } from 'react-redux'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTasks, faChevronLeft, faChevronRight, faHeart, faUser, faBook, faListAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faTasks, faChevronLeft, faChevronRight, faHeart, faUser, faBook, faListAlt, faPlusCircle, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import '../node_modules/bootstrap/scss/bootstrap.scss'
 import './styles/index.scss'
 
-library.add(faTasks, faChevronLeft, faChevronRight, fab, faHeart, faUser, faBook, faListAlt, faPlusCircle)
+library.add(faTasks, faChevronLeft, faChevronRight, fab, faHeart, faUser, faBook, faListAlt, faPlusCircle, faEdit)
 
 const mapStateToProps = state => {
 	return {

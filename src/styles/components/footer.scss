@@ -10,4 +10,22 @@ footer {
 	.credit-text {
 		margin: 0 5px;
 	}
+	.svg-inline--fa{
+		@include transition(all 0.4s 0s ease-out);
+	}
+
+	.hover-color{
+		display: inline;
+		&:hover{
+			.fa-chevron-left,.fa-chevron-right{
+				color: $purple;
+			}
+			.fa-heart{
+				color: red;
+			}
+			.fa-react{
+				color:#4ad5ff;
+			}
+		}
+	}
 }

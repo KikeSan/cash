@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import { FontAwesomeIcon  } from '@fortawesome/react-fontawesome'
+import logo from '../images/logoBlue.svg'
 
 class Header extends Component{
   render(){
@@ -7,8 +8,7 @@ class Header extends Component{
       <header>
         <nav className="navbar navbar-expand-lg">
           <a className="navbar-brand" href="#">
-            {/* <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""/> */}
-            LOGO
+            <img src={logo} width="30" height="30" alt=""/>
           </a>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav">

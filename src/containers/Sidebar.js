@@ -28,16 +28,6 @@ class ConnectedSidebar extends Component {
 		return (
 			<div className="sidebar">
 				<ul>
-					{/* <li>
-						<a>
-							<FontAwesomeIcon icon="book" size="sm" /> <span>Cuentas</span>
-						</a>
-					</li>
-					<li>
-						<a>
-							<FontAwesomeIcon icon="list-alt" size="sm" /> <span>Categorías</span>
-						</a>
-					</li> */}
 					{this.props.menu.map(item => {
 						if (item.id === this.props.activo) {
 							return (
