@@ -9,9 +9,15 @@
 .badge--red {
 	background: $red;
 }
-.badge--purple {
+.badge--purple,
+.badge--efectivo {
 	background: $purple;
 }
+.badge--banco {
+	background: $lightblue;
+}
+
+/* BULLETS */
 
 .bullet {
 	width: 10px;

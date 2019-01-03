@@ -42,8 +42,18 @@ class Body extends Component {
 								return (
 									<a className={this.state.activo === cta.id ? "cuentas-item item-activo" : "cuentas-item"} key={cta.id} id={cta.id} onClick={this.changeCuenta}>
 										<h4 className="cuentas-item__nombre">{cta.nombre}</h4>
-										<span className={"cuentas-item__badge badge cuentas-item__badge--" + cta.tipo.toLowerCase()}>{cta.tipo}</span>
-										<span className="cuentas-item__monto">S/{cta.monto}</span>
+										<span className={"badge badge--" + cta.tipo.toLowerCase()}>{cta.tipo}</span>
+										<span className="cuentas-item__monto">
+											S/
+											{cta.apertura +
+												cta.transacciones.reduce((acc, currValue) => {
+													if (currValue.tipoTx === "ingreso") {
+														return acc + currValue.importe;
+													} else {
+														return acc - currValue.importe;
+													}
+												}, 0)}
+										</span>
 										<span className="cuentas-item__fecha">{cta.fecha}</span>
 									</a>
 								);
@@ -74,13 +84,14 @@ class Body extends Component {
 															<p className="tx-title">Monto disponible</p>
 															<p className="tx-description tx-description--purple">
 																S/
-																{data.transacciones.reduce((acc, currValue) => {
-																	if (currValue.tipoTx === "ingreso") {
-																		return acc + currValue.importe;
-																	} else {
-																		return acc - currValue.importe;
-																	}
-																}, 0)}
+																{data.apertura +
+																	data.transacciones.reduce((acc, currValue) => {
+																		if (currValue.tipoTx === "ingreso") {
+																			return acc + currValue.importe;
+																		} else {
+																			return +acc - currValue.importe;
+																		}
+																	}, 0)}
 															</p>
 														</div>
 														<div className="col">
@@ -140,10 +151,40 @@ class Body extends Component {
 												</div>
 											</div>
 											<div label="Información">
-												After &apos;while, <em>Crocodile</em>!
+												<div className="container-fluid">
+													<h3 className="infoTitle">Información de la cuenta</h3>
+													<div className="row">
+														<div className="col-4">
+															<p className="infoText">Nombre de la cuenta:</p>
+															<p className="infoText">Tipo de cuenta:</p>
+															<p className="infoText">Código:</p>
+															<p className="infoText">Monto:</p>
+															<p className="infoText">Alerta monto mínimo:</p>
+														</div>
+														<div className="col-8">
+															<p className="infoText infoText--bold">{data.nombre}</p>
+															<p className="infoText infoText--bold">
+																<span className={"badge badge--" + data.tipo.toLowerCase()}>{data.tipo}</span>
+															</p>
+															<p className="infoText infoText--bold">{data.id}</p>
+															<p className="infoText infoText--bold">
+																S/
+																{data.apertura +
+																	data.transacciones.reduce((acc, currValue) => {
+																		if (currValue.tipoTx === "ingreso") {
+																			return acc + currValue.importe;
+																		} else {
+																			return acc - currValue.importe;
+																		}
+																	}, 0)}
+															</p>
+															<p className="infoText infoText--bold">S/{data.alertaMonto}</p>
+														</div>
+													</div>
+												</div>
 											</div>
 											<div label="Compartir">
-												Nothing to see here, this tab is <em>extinct</em>!
+												<div className="" />
 											</div>
 										</Tabs>
 									</div>
